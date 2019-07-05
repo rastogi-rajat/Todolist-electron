@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Todo List</title></head>
+    <body>
+        <h1>Todo List</h1>
+        <ul></ul>
+        <script>
+            const electron = require('electron');
+            const {ipcRenderer} = electron;
+            const ul = document.querySelector('ul');
+            ipcRenderer.on('task:add', (e, task) => {
+                const li = document.createElement('li');
+                const taskText = document.createTextNode(task);
+                li.appendChild(taskText);
+                ul.appendChild(li);
+            })
+        </script>
+    </body>
+</html>

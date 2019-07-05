@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Add Task</title></head>
+    <body>
+        <form>
+            <input type="text" id='task' />
+            <button>Add</button>
+        </form>
+    </body>
+    <script>
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        const form = document.querySelector("form");
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const task = document.querySelector('#task').value;
+            ipcRenderer.send('task:add', task);
+        });
+    </script>
+</html>
