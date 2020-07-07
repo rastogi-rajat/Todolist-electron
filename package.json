@@ -9,6 +9,6 @@
   "author": "Rajat Rastogi",
   "license": "MIT",
   "dependencies": {
-    "electron": "^5.0.6"
+    "electron": "^9.1.0"
   }
 }
